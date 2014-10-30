@@ -14,12 +14,12 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="innovoporBootstrapApp">
+  <body ng-app="innovoporBootstrapApp" data-spy="scroll" data-target=".navbar-ex1-collapse">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <header class="navbar navbar-static-top" role="navigation">
+    <header class="navbar navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="container">
           <div class="navbar-header">
@@ -30,23 +30,23 @@
             <a class="navbar-brand" href="#">Brand</a>
           </div>
           <nav role="navigation" class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav nav-justified">
-              <li><a href="#">Inicio</a></li>
-              <li><a href="#">Cuestamoras</a></li>
-              <li><a href="#">Innova Por</a></li>
-              <li><a href="#">Agenda</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">M&uacute;sica</a></li>
-              <li><a href="#">Galer&iacute;a</a></li>
-              <li><a href="#">Brainteaser</a></li>
-              <li><a href="#">La Producci&oacute;n</a></li>
+            <ul class="nav nav-justified" role="tablist">
+              <li class="active"><a href="#inicio">Inicio</a></li>
+              <li><a href="#porque-cuestamoras">Cuestamoras</a></li>
+              <li><a href="#innovo-por">Innova Por</a></li>
+              <li><a href="#agenda">Agenda</a></li>
+              <li><a href="#blog">Blog</a></li>
+              <li><a href="#musica-innovadora">M&uacute;sica</a></li>
+              <li><a href="#galeria">Galer&iacute;a</a></li>
+              <li><a href="#brainteasers">Brainteaser</a></li>
+              <li><a href="#produccion">La Producci&oacute;n</a></li>
             </ul>
           </nav>
         </div>
       </div>
     </header>
 
-    <section class="content-section video-section">
+    <section id="inicio" class="content-section video-section">
       <div class="pattern-overlay">
         <a id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=WBGPlUlPjmk',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:1}">bg</a>
         <div class="container">
@@ -82,7 +82,43 @@
     </section>
 
     <div class="container">
-      <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
+      <div id="porque-cuestamoras" class="section-wrapper" ng-include="'views/porque-cuestamoras.html'" ng-controller="PorqueCuestamorasCtrl"></div>
+    </div>
+
+    <div class="container">
+      <div id="como-lo-hacemos" class="section-wrapper" ng-include="'views/como-lo-hacemos.html'" ng-controller="ComoLoHacemosCtrl"></div>
+    </div>
+
+    <div class="container">
+      <div id="innovo-por" class="section-wrapper" ng-include="'views/innovo-por.html'" ng-controller="InnovoPorCtrl"></div>
+    </div>
+
+    <div class="container">
+      <div id="agenda" class="section-wrapper" ng-include="'views/agenda.html'" ng-controller="AgendaCtrl"></div>
+    </div>
+
+    <div class="container">
+      <div id="blog" class="section-wrapper" ng-include="'views/blog.html'" ng-controller="BlogCtrl"></div>
+    </div>
+
+    <div class="container">
+      <div id="twitter" class="section-wrapper" ng-include="'views/twitter.html'" ng-controller="TwitterCtrl"></div>
+    </div>
+
+    <div class="container">
+      <div id="musica-innovadora" class="section-wrapper" ng-include="'views/musica-innovadora.html'" ng-controller="MusicaInnovadoraCtrl"></div>
+    </div>
+
+    <div class="container">
+      <div id="galeria" class="section-wrapper" ng-include="'views/galeria.html'" ng-controller="GaleriaCtrl"></div>
+    </div>
+
+    <div class="container">
+      <div id="brainteasers" class="section-wrapper" ng-include="'views/brainteasers.html'" ng-controller="BrainteasersCtrl"></div>
+    </div>
+
+    <div class="container">
+      <div id="produccion" class="section-wrapper" ng-include="'views/produccion.html'" ng-controller="ProduccionCtrl"></div>
     </div>
 
     <div class="footer">
@@ -104,8 +140,8 @@
     <script src="http://pupunzi.com/mb.components/mb.YTPlayer/demo/inc/jquery.mb.YTPlayer.js"></script>
     <script src="bower_components/scrollr/dist/skrollr.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+    <!-- <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>-->
+    <!-- <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>-->
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
@@ -114,14 +150,24 @@
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+    <!-- <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>-->
+    <!-- <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>-->
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/porque-cuestamoras.js"></script>
+        <script src="scripts/controllers/como-lo-hacemos.js"></script>
+        <script src="scripts/controllers/innovo-por.js"></script>
+        <script src="scripts/controllers/agenda.js"></script>
+        <script src="scripts/controllers/blog.js"></script>
+        <script src="scripts/controllers/twitter.js"></script>
+        <script src="scripts/controllers/musica-innovadora.js"></script>
+        <script src="scripts/controllers/galeria.js"></script>
+        <script src="scripts/controllers/brainteasers.js"></script>
+        <script src="scripts/controllers/produccion.js"></script>
         <!-- endbuild -->
     <script>
     $(document).ready(function () {
