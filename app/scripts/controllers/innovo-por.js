@@ -2,15 +2,15 @@
 
 /**
  * @ngdoc function
- * @name innovoporBootstrapApp.controller:InnovoPorCtrl
+ * @name innovopor.controller:InnovoPorCtrl
  * @description
  * # InnovoPorCtrl
- * Controller of the innovoporBootstrapApp
+ * Controller of the innovopor
  */
-angular.module('innovoporBootstrapApp')
+angular.module('innovopor')
   .controller('InnovoPorCtrl', function ($scope) {
 
   	//WordCloud(document.getElementById('cloud'), { list: [['test', 2], ['perro', 22]] } );
-
+  	$scope.hi = 'hi';
 
   });

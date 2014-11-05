@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name innovoporBootstrapApp.controller:BlogCtrl
+ * @name innovopor.controller:BlogCtrl
  * @description
  * # BlogCtrl
- * Controller of the innovoporBootstrapApp
+ * Controller of the innovopor
  */
-angular.module('innovoporBootstrapApp')
+angular.module('innovopor')
   .controller('BlogCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

@@ -1,7 +1,15 @@
+@import "compass/reset";
+@import "compass/utilities";
+@import "compass/css3";
+
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
+
+@import "fonts";
+@import "base";
 @import "video-bg";
+@import "sections";
 // endbower
 
 body {
@@ -18,20 +26,6 @@ body {
 .container {
   overflow: hidden;
 }
-
-.section-wrapper {
-  padding-top: 80px;
-  min-height: 500px;
-}
-
-header {
-  .nav-justified {
-    li.active a {
-      border-bottom: 3px solid red;
-    }
-  }
-}
-
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

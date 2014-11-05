@@ -1,0 +1,91 @@
+$base_font_size: 16px;
+@import "functions";
+@import "utils";
+
+//Common Fonts
+$primary_font: 'Oswald', sans-serif;
+$secondary_font: 'Raleway', sans-serif;
+
+//Common Colors
+$common_color_white: white;
+$common_color_black: black;
+$common_color_red: red;
+
+//headings Variables
+$headings_color: $common_color_black;
+$headings_font: $primary_font;
+$headings_size_px: 55px;
+$headings_size: em($headings_size_px);
+
+//Header
+$header_background: $common_color_white;
+$header_nav_font: $primary_font;
+$header_link_color: $common_color_black;
+$header_link_color_hover: $common_color_red;
+
+
+.headings_divider {
+	content: '––––';
+	display: block;
+	font-size: em(60px, $headings_size_px);
+	font-family: $headings_font;
+	font-weight: 300;
+	letter-spacing: -6px;
+	line-height: 0;
+	color: #eaeaeb;
+	margin-bottom: em(60px, $headings_size_px);
+}
+
+html {
+	font-size: $base_font_size;
+}
+
+h1 {
+	font-size: em(110px);
+	font-family: $headings_font;
+	color: $headings_color;
+}
+
+h2 {
+	font-size: $headings_size;
+	font-family: $headings_font;
+	color: $headings_color;
+	&:after {
+		@extend .headings_divider;
+	}
+}
+
+h3 {
+	font-size: em(55px);
+	font-family: $headings_font;
+	color: $headings_color;
+}
+
+h4 {
+	font-size: em(45px);
+	font-family: $headings_font;
+	color: $headings_color;
+}
+
+h5 {
+	font-size: em(34px);
+	font-family: $headings_font;
+	color: $headings_color;
+}
+
+.btn {
+	@include border-radius(2px, 2px);
+	border: 2px solid white;
+	font-family: $primary_font;
+	text-transform: uppercase;
+}
+.btn-primary {
+	border: 2px solid white;
+	background: black;
+	padding: 8px 20px;
+	&:hover {
+		border: 2px solid gray;
+		background: black;
+		color: gray;
+	}
+}

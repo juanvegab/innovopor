@@ -1,0 +1,110 @@
+.section-wrapper {
+  padding-top: 30px;
+  min-height: 500px;
+}
+
+
+
+//Navegacion Principal
+#main-nav-bar {
+	background: $header_background;
+	nav {
+		li {
+			a {
+				font-family: $header_nav_font;
+				font-weight: bold;
+				text-transform: uppercase;
+				color: $header_link_color;
+				padding: 15px 10px;
+			}
+			&.active {
+				a {
+					color: $header_link_color_hover;
+				}
+			}
+		}
+	}
+	.navbar-brand {
+		font-family: $header_nav_font;
+		font-size: em(22px);
+		font-weight: bold;
+		text-transform: uppercase;
+		color: $header_link_color;
+	}
+}
+
+//Inicio
+#inicio {
+	.add-word {
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+		background: #1d1f1e;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	.instructions {
+		color: $common_color_white;
+		font-size: em(16px);
+		.text-uppercase {
+			font-family: $headings_font;
+			font-size: em(36px, 16px);
+		}
+	}
+	.word-input {
+		height: 60px;
+		@include border-radius(2px, 2px);
+		font-size: em(34px);
+		text-transform: uppercase;
+		font-family: $primary_font;
+		font-weight: bold;
+		color: $common_color_black;
+	}
+	.word-submit {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+}
+
+//Innovo Por, Word Cloud
+#innovo-por {
+	.cloud {
+		margin-top: 70px;
+		margin-bottom: 30px;
+		svg {
+			margin: 0 auto;
+			display: block;
+			overflow: visible;
+		}
+	}
+}
+
+//Agenda del Evento
+#agenda {
+	.media-list {
+		.media:first-child {
+			padding-top: 15px;
+		}
+	}	
+}
+
+//Porque Cuestamoras
+#porque-cuestamoras {
+	min-height: 0;
+}
+
+//Como lo hacemos
+#como-lo-hacemos{
+	min-height: 0;
+	.reasons-list {
+		li {
+			font-size: em(25px);
+			margin-bottom: 20px;
+			vertical-align: top;
+			&:before {
+				@extend .circle;
+			}
+		}
+	}
+}
+

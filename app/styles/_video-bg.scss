@@ -1,21 +1,19 @@
 .video-section .pattern-overlay {
-  // background-color: rgba(71, 71, 71, 0.59);
+  background-color: rgba(0, 0, 0, 0.3);
   padding: 110px 0 32px;
-  min-height: 496px;
+  min-height: 720px;
+  @include box-shadow(inset black 0px 0px 140px 20px);
 }
 .video-section h1, .video-section h3{
   text-align:center;
   color:#fff;
 }
 .video-section h1{
-  font-size:110px;
-  font-family: 'Buenard', serif;
-  font-weight:bold;
+  font-family: $headings_font;
+  font-weight: 300;
+  font-weight: bold;
   text-transform: uppercase;
-  margin: 40px auto 0px;
-  text-shadow: 1px 1px 1px #000;
-  -webkit-text-shadow: 1px 1px 1px #000;
-  -moz-text-shadow: 1px 1px 1px #000;
+  margin: 70px auto 0px;
 }
 .video-section h3{
   font-size: 25px;

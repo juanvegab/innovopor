@@ -14,12 +14,12 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="innovoporBootstrapApp" data-spy="scroll" data-target=".navbar-ex1-collapse">
+  <body id="home" ng-app="innovopor" data-spy="scroll" data-target=".navbar-ex1-collapse">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <header class="navbar navbar-fixed-top" role="navigation">
+    <header id="main-nav-bar" class="navbar navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="container">
           <div class="navbar-header">
@@ -27,19 +27,19 @@
               <span class="sr-only">Toggle navigation</span>
               <span class="glyphicon glyphicon-align-justify"></span>
             </button>
-            <a class="navbar-brand" href="#">Brand</a>
+            <a class="navbar-brand" href="#home">#Innovo Por</a>
           </div>
           <nav role="navigation" class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav nav-justified" role="tablist">
-              <li class="active"><a href="#inicio">Inicio</a></li>
-              <li><a href="#porque-cuestamoras">Cuestamoras</a></li>
+              <li class="active"><a href="#home">Inicio</a></li>
+              <li><a href="#porque-cuestamoras">Cuestamoras?</a></li>
               <li><a href="#innovo-por">Innova Por</a></li>
               <li><a href="#agenda">Agenda</a></li>
               <li><a href="#blog">Blog</a></li>
               <li><a href="#musica-innovadora">M&uacute;sica</a></li>
               <li><a href="#galeria">Galer&iacute;a</a></li>
               <li><a href="#brainteasers">Brainteaser</a></li>
-              <li><a href="#produccion">La Producci&oacute;n</a></li>
+              <li><a href="#produccion">Producci&oacute;n</a></li>
             </ul>
           </nav>
         </div>
@@ -48,12 +48,11 @@
 
     <section id="inicio" class="content-section video-section">
       <div class="pattern-overlay">
-        <a id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=WBGPlUlPjmk',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:1}">bg</a>
+        <a id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=umi5y-eGJ-E',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:1}">bg</a>
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              <h1>Innovo Por</h1>  
-              <h3>Cuestamoras</h3>
+              <h1>Innovo Por</h1>
             </div>
           </div>
         </div>
@@ -63,15 +62,13 @@
               <div class="col-md-10 col-md-offset-1">
                 <div class="row">
                   <div class="col-md-3">
-                    <p><span class="text-uppercase">#innovopor</span> Describe en una palabra raz&oacute;n por la cual innov&aacute;s</p>
+                    <p class="instructions"><span class="text-uppercase">#innovo por</span> Describe en una palabra raz&oacute;n por la cual innov&aacute;s</p>
                   </div>
                   <div class="col-md-4 col-md-offset-1">
-                    <form action="">
-                      <input type="text" class="form-control"  placeholder="innovopor">
-                    </form>
+                    <input type="text" class="word-input form-control"  placeholder="innovopor">
                   </div>
                   <div class="col-md-3">
-                    <button class="btn btn-primary pull-right" type="button">Agregar</button>
+                    <button class="btn btn-primary pull-right word-submit" type="button">Agregar</button>
                   </div>
                 </div>
               </div>
@@ -97,9 +94,7 @@
       <div id="agenda" class="section-wrapper" ng-include="'views/agenda.html'" ng-controller="AgendaCtrl"></div>
     </div>
 
-    <div class="container">
-      <div id="blog" class="section-wrapper" ng-include="'views/blog.html'" ng-controller="BlogCtrl"></div>
-    </div>
+    <div id="blog" class="section-wrapper" ng-include="'views/blog.html'" ng-controller="BlogCtrl"></div>
 
     <div class="container">
       <div id="twitter" class="section-wrapper" ng-include="'views/twitter.html'" ng-controller="TwitterCtrl"></div>
@@ -138,7 +133,8 @@
     <!-- bower:js -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="http://pupunzi.com/mb.components/mb.YTPlayer/demo/inc/jquery.mb.YTPlayer.js"></script>
-    <script src="scripts/wordcloud2.js"></script>
+    <script src="scripts/d3.js"></script>
+    <script src="scripts/d3.layout.cloud.js"></script>
     <script src="bower_components/scrollr/dist/skrollr.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <!-- <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>-->
@@ -171,8 +167,51 @@
         <script src="scripts/controllers/produccion.js"></script>
         <!-- endbuild -->
     <script>
+    var run = function() {
+      var fill = d3.scale.category20();
+
+      d3.layout.cloud().size([800, 400])
+          .words(["Apple","Inc","is","an","American","multinational","corporation","headquartered","in","Cupertino","California","that","designs","develops","and","sells","consumer","electronics","computer","software","online","services","and","personal","computers","Its","bestknown","hardware","products","are","the","Mac","line","of","computers","the","iPod","media","player","the","iPhone","smartphone","and","the","iPad","tablet","computer","Its","online","services","include","iCloud","iTunes","Store","and","App","Store","Apples","consumer","software","includes","the","OS","X","and","iOS","operating","systems","the","iTunes","media","browser","the","Safari","web","browser","and","the","iLife","and","iWork","creativity","and","productivity","suites","Apple","was","founded","by","Steve","Jobs","Steve","Wozniak","and","Ronald","Wayne","on","April","1","1976","to","develop","and","sell","personal","computers","It","was","incorporated","as","Apple","Computer","Inc","on","January","3","1977","and","was","renamed","as","Apple","Inc","on","January","9","2007","to","reflect","its","shifted","focus","towards","consumer","electronics"]
+            .map(function(d) {
+            return {text: d, size: 10 + Math.random() * 90};
+          }))
+          .padding(5)
+          .rotate(function() { return ~~(Math.PI / 180); })
+          .font("Impact")
+          .fontSize(function(d) { return d.size; })
+          .on("end", draw)
+          .start();
+
+      function draw(words) {
+        d3.select(".cloud").append("svg")
+            .attr("width", 800)
+            .attr("height", 400)
+          .append("g")
+            .attr("transform", "translate(400,200)")
+          .selectAll("text")
+            .data(words)
+          .enter().append("text")
+            .style("font-size", function(d) { return d.size + "px"; })
+            .style("font-family", "Impact")
+            .style("fill", function(d, i) { return fill('4,6,9'); })
+            .attr("text-anchor", "middle")
+            .attr("transform", function(d) {
+              return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+            })
+            .text(function(d) { return d.text; });
+      }
+    }
     $(document).ready(function () {
         $(".player").mb_YTPlayer();
+        $("#main-nav-bar a[href^='#']").on('click', function(e) {
+            e.preventDefault();
+            $('html, body').animate({
+              scrollTop: $(this.hash).offset().top - 8
+            }, 500, false);
+        });
+        setTimeout(function() {
+          run();
+        }, 500);
     });
     </script>
 </body>
