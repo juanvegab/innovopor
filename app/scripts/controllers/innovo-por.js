@@ -9,9 +9,8 @@
  */
 angular.module('innovoporBootstrapApp')
   .controller('InnovoPorCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+
+  	//WordCloud(document.getElementById('cloud'), { list: [['test', 2], ['perro', 22]] } );
+
+
   });
