@@ -2,7 +2,7 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>Innovo Por</title>
+    <title>Innovamos Por</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -27,13 +27,13 @@
               <span class="sr-only">Toggle navigation</span>
               <span class="glyphicon glyphicon-align-justify"></span>
             </button>
-            <a class="navbar-brand" href="#home">#Innovo Por</a>
+            <a class="navbar-brand" href="#home">#Innovamos Por</a>
           </div>
           <nav role="navigation" class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav nav-justified" role="tablist">
               <li class="active"><a href="#home">Inicio</a></li>
               <li><a href="#porque-cuestamoras">Cuestamoras?</a></li>
-              <li><a href="#innovo-por">Innova Por</a></li>
+              <li><a href="#innovo-por">Innovamos Por</a></li>
               <li><a href="#agenda">Agenda</a></li>
               <li><a href="#blog">Blog</a></li>
               <li><a href="#musica-innovadora">M&uacute;sica</a></li>
@@ -52,7 +52,7 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              <h1>Innovo Por</h1>
+              <h1>Innovamos Por</h1>
             </div>
           </div>
         </div>
@@ -62,10 +62,10 @@
               <div class="col-md-10 col-md-offset-1">
                 <div class="row">
                   <div class="col-md-3">
-                    <p class="instructions"><span class="text-uppercase">#innovo por</span> Describe en una palabra raz&oacute;n por la cual innov&aacute;s</p>
+                    <p class="instructions"><span class="text-uppercase">#innovamos por</span> Describe en una palabra raz&oacute;n por la cual innov&aacute;s</p>
                   </div>
                   <div class="col-md-4 col-md-offset-1">
-                    <input type="text" class="word-input form-control"  placeholder="innovopor">
+                    <input type="text" class="word-input form-control"  placeholder="innovamospor">
                   </div>
                   <div class="col-md-3">
                     <button class="btn btn-primary pull-right word-submit" type="button">Agregar</button>
@@ -90,9 +90,7 @@
       <div id="innovo-por" class="section-wrapper" ng-include="'views/innovo-por.html'" ng-controller="InnovoPorCtrl"></div>
     </div>
 
-    <div class="container">
-      <div id="agenda" class="section-wrapper" ng-include="'views/agenda.html'" ng-controller="AgendaCtrl"></div>
-    </div>
+    <div id="agenda" class="section-wrapper section-wrapper-white" ng-include="'views/agenda.html'" ng-controller="AgendaCtrl"></div>
 
     <div id="blog" class="section-wrapper" ng-include="'views/blog.html'" ng-controller="BlogCtrl"></div>
 
@@ -128,13 +126,12 @@
     <script src="bower_components/json3/lib/json3.js"></script>
     <![endif]-->
     <!-- endbuild -->
-
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="http://pupunzi.com/mb.components/mb.YTPlayer/demo/inc/jquery.mb.YTPlayer.js"></script>
     <script src="scripts/d3.js"></script>
     <script src="scripts/d3.layout.cloud.js"></script>
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
     <script src="bower_components/scrollr/dist/skrollr.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <!-- <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>-->
@@ -170,14 +167,21 @@
     var run = function() {
       var fill = d3.scale.category20();
 
+      var getRandomGray = function() {
+        var value = Math.random() * 0xFF | 0;
+        var grayscale = (value << 16) | (value << 8) | value;
+        var color = grayscale.toString(16);
+        return color.toLowerCase();
+      };
+
       d3.layout.cloud().size([800, 400])
-          .words(["Apple","Inc","is","an","American","multinational","corporation","headquartered","in","Cupertino","California","that","designs","develops","and","sells","consumer","electronics","computer","software","online","services","and","personal","computers","Its","bestknown","hardware","products","are","the","Mac","line","of","computers","the","iPod","media","player","the","iPhone","smartphone","and","the","iPad","tablet","computer","Its","online","services","include","iCloud","iTunes","Store","and","App","Store","Apples","consumer","software","includes","the","OS","X","and","iOS","operating","systems","the","iTunes","media","browser","the","Safari","web","browser","and","the","iLife","and","iWork","creativity","and","productivity","suites","Apple","was","founded","by","Steve","Jobs","Steve","Wozniak","and","Ronald","Wayne","on","April","1","1976","to","develop","and","sell","personal","computers","It","was","incorporated","as","Apple","Computer","Inc","on","January","3","1977","and","was","renamed","as","Apple","Inc","on","January","9","2007","to","reflect","its","shifted","focus","towards","consumer","electronics"]
+          .words(["undetonated","shortchanged","anaglyptic","unillustrious","nonagrarian","situationally","oscitance","pinafore","salieri","uncharred","snooty","carnage","nonfactitious","microchemistry","bagasse","drake","hyperdeify","soupire","leucippus","beefcake","fuliginousness","trymata","halicot","predefy","barratrous","overhomely","playbill","preregulated","Correctingly","timorously","nummulitic","superheartiness","canella","unannexable","philosophizing","taal","nonreproductive","dyarchy","untedious","grabble","eleoptene","armarium","redintegrating","misunion","photoperiodic","nonmetaphysical","unvigilant","rearoused","wormgear","postpuerperal","mussel","unclutched","hebraised","wackier","rubella","organotherapy","isai","Dispermy","unskinned","nagaland","palliator","germinable","nudity","luminiferous","justifier","komondor","excited","instal","magnificence","beria","comfort","cowcatcher","isoabnormal","foveolet","partitively","anorexiant","tachygraphist","carbylamine","hemiolia", "Correctingly","timorously","nummulitic","superheartiness","canella","unannexable","philosophizing","taal","nonreproductive","dyarchy","untedious","grabble","eleoptene","armarium","redintegrating","misunion","photoperiodic","nonmetaphysical","unvigilant","rearoused","wormgear","postpuerperal","mussel","unclutched","hebraised","wackier","rubella","organotherapy","isai"]
             .map(function(d) {
             return {text: d, size: 10 + Math.random() * 90};
           }))
           .padding(5)
-          .rotate(function() { return ~~(Math.PI / 180); })
-          .font("Impact")
+          .rotate(function() { return (Math.floor((Math.random() * 2)) * -90); })
+          .font("Oswald")
           .fontSize(function(d) { return d.size; })
           .on("end", draw)
           .start();
@@ -186,14 +190,16 @@
         d3.select(".cloud").append("svg")
             .attr("width", 800)
             .attr("height", 400)
-          .append("g")
+            .append("g")
             .attr("transform", "translate(400,200)")
-          .selectAll("text")
+            .selectAll("text")
             .data(words)
-          .enter().append("text")
+            .enter().append("text")
             .style("font-size", function(d) { return d.size + "px"; })
-            .style("font-family", "Impact")
-            .style("fill", function(d, i) { return fill('4,6,9'); })
+            .style("font-family", "Oswald")
+            .style("fill", function(){
+              return "#" + getRandomGray();
+            })
             .attr("text-anchor", "middle")
             .attr("transform", function(d) {
               return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";

@@ -10,12 +10,15 @@ $secondary_font: 'Raleway', sans-serif;
 $common_color_white: white;
 $common_color_black: black;
 $common_color_red: red;
+$common_color_red_light: #c7595e;
 
 //headings Variables
 $headings_color: $common_color_black;
 $headings_font: $primary_font;
 $headings_size_px: 55px;
 $headings_size: em($headings_size_px);
+
+$headings_color_altern: $common_color_white;
 
 //Header
 $header_background: $common_color_white;
@@ -24,7 +27,7 @@ $header_link_color: $common_color_black;
 $header_link_color_hover: $common_color_red;
 
 
-.headings_divider {
+.headings_divider:after {
 	content: '––––';
 	display: block;
 	font-size: em(60px, $headings_size_px);
@@ -33,7 +36,7 @@ $header_link_color_hover: $common_color_red;
 	letter-spacing: -6px;
 	line-height: 0;
 	color: #eaeaeb;
-	margin-bottom: em(60px, $headings_size_px);
+	margin-bottom: em(40px, $headings_size_px);
 }
 
 html {
@@ -50,9 +53,7 @@ h2 {
 	font-size: $headings_size;
 	font-family: $headings_font;
 	color: $headings_color;
-	&:after {
-		@extend .headings_divider;
-	}
+	margin-top: 20px;
 }
 
 h3 {

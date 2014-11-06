@@ -3,6 +3,17 @@
   min-height: 500px;
 }
 
+.section-wrapper-white {
+	h2,
+	h3,
+	h4,
+	h5,
+	p,
+	span,
+	a {
+		color: $headings_color_altern;
+	}
+}
 
 
 //Navegacion Principal
@@ -48,7 +59,7 @@
 		font-size: em(16px);
 		.text-uppercase {
 			font-family: $headings_font;
-			font-size: em(36px, 16px);
+			font-size: em(33px, 16px);
 		}
 	}
 	.word-input {
@@ -66,26 +77,67 @@
 	}
 }
 
-//Innovo Por, Word Cloud
-#innovo-por {
-	.cloud {
-		margin-top: 70px;
-		margin-bottom: 30px;
-		svg {
-			margin: 0 auto;
-			display: block;
-			overflow: visible;
-		}
-	}
-}
-
 //Agenda del Evento
 #agenda {
+	@include background(image-url('../images/agenda-background.jpg') center center);
+	@include background-size(cover);
+	background-attachment: fixed;
+	// filter: blur(5px);
+	// -webkit-filter: blur(5px);
+
+	.nav-tabs {
+		border: none;
+		overflow: hidden;
+		a {
+			@include border-radius(0);
+			color: #3F3F41;
+			font-family: $primary_font;
+			font-size: em(22px);
+			background: rgba(119, 117, 118, 0.7);
+			border: none;
+			margin-right: 0;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		li.active {
+			a {
+				color: $common_color_black;
+				background: rgba(140, 138, 139, 0.7);
+			}
+		}
+	}
+
+	.tab-content {
+		background: rgba(140, 138, 139, 0.7);
+		overflow: hidden;
+		margin-bottom: 30px;
+	}
+
 	.media-list {
 		.media:first-child {
 			padding-top: 15px;
 		}
-	}	
+	}
+
+	.media-heading {
+		text-transform: uppercase;
+		font-weight: bold;
+		& + p {
+			font-weight: 100;
+		}
+	}
+
+	.event-date {
+		span {
+			color: $common_color_white;
+		}
+		color: $common_color_red_light;
+	}
+
+	.bottom-link {
+		margin-top: 30px;
+		margin-bottom: 40px;
+	}
 }
 
 //Porque Cuestamoras
@@ -99,7 +151,7 @@
 	.reasons-list {
 		li {
 			font-size: em(25px);
-			margin-bottom: 20px;
+			margin-bottom: em(30px);
 			vertical-align: top;
 			&:before {
 				@extend .circle;
@@ -108,3 +160,16 @@
 	}
 }
 
+//Innovo Por, Word Cloud
+#innovo-por {
+	margin-bottom: 30px;
+	.cloud {
+		margin-top: 80px;
+		margin-bottom: 80px;
+		svg {
+			margin: 0 auto;
+			display: block;
+			overflow: visible;
+		}
+	}
+}
