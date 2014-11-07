@@ -9,11 +9,13 @@ $secondary_font: 'Raleway', sans-serif;
 //Common Colors
 $common_color_white: white;
 $common_color_black: black;
+$common_color_gray: #eaeaeb;
 $common_color_red: red;
 $common_color_red_light: #c7595e;
 
 //headings Variables
 $headings_color: $common_color_black;
+$headings_color_underline: $common_color_gray;
 $headings_font: $primary_font;
 $headings_size_px: 55px;
 $headings_size: em($headings_size_px);
@@ -28,15 +30,33 @@ $header_link_color_hover: $common_color_red;
 
 
 .headings_divider:after {
-	content: '––––';
+	content: ' ';
 	display: block;
 	font-size: em(60px, $headings_size_px);
 	font-family: $headings_font;
 	font-weight: 300;
-	letter-spacing: -6px;
 	line-height: 0;
-	color: #eaeaeb;
-	margin-bottom: em(40px, $headings_size_px);
+	color: $headings_color_underline;
+	border-bottom: 3px solid;
+	width: 50px;
+	margin: em(20px, $headings_size_px) auto 0;
+}
+
+.controls-bar {
+	bottom: 0;
+	left: 50%;
+	width: 100px;
+	position: absolute;
+	margin-left: -50px;
+	margin-bottom: 20px;
+	a {
+		color: $common_color_white;
+		background: rgba(0,0,0,0.5);
+		padding: 5px 8px;
+		display: inline-block;
+		text-align: center;
+		@include border-radius(40px);
+	}
 }
 
 html {

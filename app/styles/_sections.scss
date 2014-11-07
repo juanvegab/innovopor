@@ -79,11 +79,23 @@
 
 //Agenda del Evento
 #agenda {
-	@include background(image-url('../images/agenda-background.jpg') center center);
-	@include background-size(cover);
-	background-attachment: fixed;
-	// filter: blur(5px);
-	// -webkit-filter: blur(5px);
+	position: relative;
+	overflow: hidden;
+	z-index: 10;
+	&:before {
+		content: " ";
+		@include background(image-url('agenda-background.jpg') center center);
+		@include background-size(cover);
+		background-attachment: fixed;
+		display: block;
+		z-index: -10;
+		width: 100%;
+		height: 110%;
+		position: absolute;
+		filter: blur(3px);
+		-webkit-filter: blur(3px);
+		top: 0;
+	}
 
 	.nav-tabs {
 		border: none;
@@ -172,4 +184,109 @@
 			overflow: visible;
 		}
 	}
+}
+
+//Blog
+#blog {
+	position: relative;
+	overflow: hidden;
+	z-index: 10;
+
+	.heading-wrapper {
+		margin-bottom: 50px;
+	}
+
+	.carousel{
+		padding-top: 45px;
+		padding-bottom: 75px;
+		overflow: hidden;
+		&:before {
+			content: " ";
+			display: block;
+			z-index: -10;
+			width: 100%;
+			height: 110%;
+			position: absolute;
+			@include background(image-url('blog-background.jpg'));
+			@include background-size(cover);
+			background-attachment: fixed;
+			filter: blur(5px);
+			-webkit-filter: blur(5px);
+			top: 0;
+		}
+	}
+
+	.item {
+		h5 {
+			color: $common_color_white;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		p {
+			color: $common_color_white;
+			font-weight: 100;
+		}
+
+		a {
+			color: $common_color_white;
+			font-weight: 100;	
+		}
+	}
+}
+
+//twitter
+#twitter {
+	position: relative;
+	overflow: hidden;
+	z-index: 10;
+
+	.heading-wrapper {
+		margin-bottom: 50px;
+	}
+
+	.carousel{
+		padding-top: 45px;
+		padding-bottom: 75px;
+		overflow: hidden;
+		&:before {
+			content: " ";
+			display: block;
+			z-index: -10;
+			width: 100%;
+			height: 110%;
+			position: absolute;
+			@include background(image-url('blog-background.jpg'));
+			@include background-size(cover);
+			background-attachment: fixed;
+			filter: blur(5px);
+			-webkit-filter: blur(5px);
+			top: 0;
+		}
+	}
+}
+
+//Musica
+#musica-innovadora {
+	.play-circle {
+		display: block;
+		margin: 40px auto;
+		width: 50%;
+		@include border-radius(100px);
+		@include box-shadow(0px 0px 20px -10px black);
+		@include transition(all 0.1s ease-in);
+		&:hover {
+			@include box-shadow(0px 0px 35px -5px black);
+		}
+		&:active {
+			@include box-shadow(0px 0px 20px 0px black);
+		}
+	}
+	.download-cta {
+		margin-bottom: 30px
+	}
+}
+
+.animClass {
+	-webkit-transform: translate3d(0, 0, 0);
+	/* more specific animation properties here */
 }
