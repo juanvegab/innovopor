@@ -1,6 +1,7 @@
 $base_font_size: 16px;
 @import "functions";
 @import "utils";
+@import "ekko-lightbox";
 
 //Common Fonts
 $primary_font: 'Oswald', sans-serif;
@@ -12,6 +13,7 @@ $common_color_black: black;
 $common_color_gray: #eaeaeb;
 $common_color_red: red;
 $common_color_red_light: #c7595e;
+$common_color_green_light: #4ab848;
 
 //headings Variables
 $headings_color: $common_color_black;
@@ -59,6 +61,39 @@ $header_link_color_hover: $common_color_red;
 	}
 }
 
+.modal-dialog {
+	width: 850px;
+	margin: 30px auto;
+}
+
+.video-wrapper {
+	margin-top: 30px;
+	li {
+		margin-bottom: 30px;
+	}
+	.caption {
+		text-transform: uppercase;
+		font-family: $primary_font;
+		color: $common_color_black;
+		font-weight: bold;
+		background: #e7e8ea;
+		text-decoration: none;
+		padding: 5px;
+		.nombre {
+			text-transform: none;
+			font-weight: normal;
+		}
+		.linkText {
+			text-transform: none;
+			font-weight: normal;
+			color: $common_color_red;
+		}
+	}
+	p {
+		margin: 0;
+	}
+}
+
 html {
 	font-size: $base_font_size;
 }
@@ -99,14 +134,25 @@ h5 {
 	border: 2px solid white;
 	font-family: $primary_font;
 	text-transform: uppercase;
+	padding: 8px 20px;
 }
 .btn-primary {
-	border: 2px solid white;
-	background: black;
-	padding: 8px 20px;
+	border: 2px solid $common_color_white;
+	background: $common_color_black;
+	color: $common_color_white;
 	&:hover {
 		border: 2px solid gray;
-		background: black;
+		background: $common_color_black;
 		color: gray;
+	}
+}
+.btn-success {
+	border: 2px solid $common_color_black;
+	background: $common_color_green_light;
+		color: $common_color_black;
+	&:hover {
+		border: 2px solid $common_color_white;
+		background: $common_color_green_light;
+		color: $common_color_white;
 	}
 }

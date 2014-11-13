@@ -27,12 +27,14 @@
               <span class="sr-only">Toggle navigation</span>
               <span class="glyphicon glyphicon-align-justify"></span>
             </button>
-            <a class="navbar-brand" href="#home">#Innovamos Por</a>
+            <a class="navbar-brand" href="#home">
+              <img class="img-responsive" src="images/logo.png" alt="">
+            </a>
           </div>
           <nav role="navigation" class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav nav-justified" role="tablist">
               <li class="active"><a href="#home">Inicio</a></li>
-              <li><a href="#porque-cuestamoras">Cuestamoras?</a></li>
+              <li><a href="#porque-cuestamoras">El Porqu&eacute;</a></li>
               <li><a href="#innovo-por">Innovamos Por</a></li>
               <li><a href="#agenda">Agenda</a></li>
               <li><a href="#blog">Blog</a></li>
@@ -51,8 +53,8 @@
         <a id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=umi5y-eGJ-E',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:1}">bg</a>
         <div class="container">
           <div class="row">
-            <div class="col-lg-12">
-              <h1>Innovamos Por</h1>
+            <div class="col-lg-12 videoLogo">
+              <img class="img-responsive" src="images/logo.png" alt="">
             </div>
           </div>
         </div>
@@ -128,6 +130,7 @@
     <!-- endbuild -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="http://pupunzi.com/mb.components/mb.YTPlayer/demo/inc/jquery.mb.YTPlayer.js"></script>
+    <script src="scripts/ekko-lightbox.min.js"></script>
     <script src="scripts/d3.js"></script>
     <script src="scripts/d3.layout.cloud.js"></script>
     <!-- build:js(.) scripts/vendor.js -->
@@ -207,30 +210,41 @@
             .text(function(d) { return d.text; });
       }
     }
+
     $(document).ready(function () {
-        jQuery.fn.clickToggle = function(a,b) {
-          var ab=[b,a];
-          function cb(){ ab[this._tog^=1].call(this); }
-          return this.on("click", cb);
-        };
-        $(".player").mb_YTPlayer();
-        $("#main-nav-bar a[href^='#']").on('click', function(e) {
-            e.preventDefault();
-            $('html, body').animate({
-              scrollTop: $(this.hash).offset().top - 8
-            }, 500, false);
+      
+      jQuery.fn.clickToggle = function(a,b) {
+        var ab=[b,a];
+        function cb(){ ab[this._tog^=1].call(this); }
+        return this.on("click", cb);
+      };
+
+      $(".player").mb_YTPlayer();
+      
+      $("#main-nav-bar a[href^='#']").on('click', function(e) {
+          e.preventDefault();
+          $('html, body').animate({
+            scrollTop: $(this.hash).offset().top - 8
+          }, 500, false);
+      });
+
+      setTimeout(function() {
+        run();
+        $('.play-circle').clickToggle(
+          function(){
+            document.getElementById('audio-player').play();
+          }, function(){
+            document.getElementById('audio-player').pause();
+          }
+        );
+
+        $('#videoModal, #videoModalProduction').on('hidden.bs.modal', function () {
+          $(this).find('iframe').attr('src', '');
         });
-        setTimeout(function() {
-          run();
-          $('.play-circle').clickToggle(
-            function(){
-              document.getElementById('audio-player').play();
-            }, function(){
-              document.getElementById('audio-player').pause();
-            }
-          );
-        }, 500);
+
+      }, 500);
     });
+  
     </script>
 </body>
 </html>

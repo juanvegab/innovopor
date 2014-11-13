@@ -1,1 +1,30 @@
 <h2 class="text-center text-uppercase headings_divider">Porqu&eacute; Innova la Producci&oacute;n <br> del Campamento 2014</h2>
+<div class="col-md-8 col-md-offset-2">
+	<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+</div>
+
+<div class="row">
+	<ul class="col-md-8 col-md-offset-2 video-wrapper">
+		<li class="col-md-6" ng-repeat="linkData in videoLinks">
+			<img src="http://img.youtube.com/vi/{{linkData.link}}/hqdefault.jpg" class="img-responsive">
+			<div class="caption">
+				<p>{{linkData.caption}}</p>
+				<p class="nombre">{{linkData.nombre}}</p>
+				<a class="linkText" href="" ng-click="openVideo(linkData)"><span class="glyphicon glyphicon-play"></span> {{linkData.linkText}}</a>
+			</div>
+		</li>
+	</ul>
+</div>
+
+<div class="modal fade" id="videoModalProduction" tabindex="-1" role="dialog" aria-labelledby="videoModalProduction" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <div>
+          <iframe width="100%" height="500" src=""></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

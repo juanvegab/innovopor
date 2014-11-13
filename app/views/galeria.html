@@ -1,1 +1,13 @@
 <h2 class="text-center text-uppercase headings_divider">Galer&iacute;a</h2>
+<div class="col-md-8 col-md-offset-2">
+	<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+</div>
+<div class="row">
+	<ul class="col-md-8 col-md-offset-2 video-wrapper">
+		<li class="col-md-4" ng-repeat="picture in pictures">
+			<a href="{{picture.source}}" data-toggle="lightbox" data-gallery="galleryModal" data-title="">
+				<img class="img-responsive" src="{{picture.source}}">
+			</a>
+		</li>
+	</ul>
+</div>
