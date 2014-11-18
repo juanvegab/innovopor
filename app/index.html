@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Innovamos Por</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -28,57 +28,64 @@
               <span class="glyphicon glyphicon-align-justify"></span>
             </button>
             <a class="navbar-brand" href="#home">
-              <img class="img-responsive" src="images/logo.png" alt="">
+              <img class="img-responsive" src="images/logo.jpg" alt="Logo Innovamos por">
             </a>
           </div>
           <nav role="navigation" class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav nav-justified" role="tablist">
-              <li class="active"><a href="#home">Inicio</a></li>
-              <li><a href="#porque-cuestamoras">El Porqu&eacute;</a></li>
-              <li><a href="#innovo-por">Innovamos Por</a></li>
-              <li><a href="#agenda">Agenda</a></li>
-              <li><a href="#blog">Blog</a></li>
-              <li><a href="#musica-innovadora">M&uacute;sica</a></li>
-              <li><a href="#galeria">Galer&iacute;a</a></li>
-              <li><a href="#brainteasers">Brainteaser</a></li>
-              <li><a href="#produccion">Producci&oacute;n</a></li>
-            </ul>
+            <div class="col-md-10 col-sm-10">
+              <ul class="nav nav-justified" role="tablist">
+                <li class="active"><a href="#home">Inicio</a></li>
+                <li><a href="#porque-cuestamoras">El Porqu&eacute;</a></li>
+                <li><a href="#innovo-por">Innovamos Por</a></li>
+                <li><a href="#agenda">Agenda</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#musica-innovadora">M&uacute;sica</a></li>
+                <li><a href="#galeria">Galer&iacute;a</a></li>
+                <li><a href="#produccion">Producci&oacute;n</a></li>
+              </ul>
+            </div>
           </nav>
         </div>
       </div>
     </header>
 
-    <section id="inicio" class="content-section video-section">
-      <div class="pattern-overlay">
-        <a id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=umi5y-eGJ-E',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:1}">bg</a>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12 videoLogo">
-              <img class="img-responsive" src="images/logo.png" alt="">
-            </div>
-          </div>
-        </div>
-        <div class="add-word">
+    <section id="inicio" class="inicio content-section video-section">
+      <div class="row">
+        <div class="pattern-overlay">
+          <a id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=umi5y-eGJ-E',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:1}">bg</a>
           <div class="container">
             <div class="row">
-              <div class="col-md-10 col-md-offset-1">
-                <div class="row">
-                  <div class="col-md-3">
-                    <p class="instructions"><span class="text-uppercase">#innovamos por</span> Describe en una palabra raz&oacute;n por la cual innov&aacute;s</p>
-                  </div>
-                  <div class="col-md-4 col-md-offset-1">
-                    <input type="text" class="word-input form-control"  placeholder="innovamospor">
-                  </div>
-                  <div class="col-md-3">
-                    <button class="btn btn-primary pull-right word-submit" type="button">Agregar</button>
-                  </div>
-                </div>
+              <div class="col-sm-6 col-sm-offset-3 videoLogo">
+                <img class="img-responsive" src="images/logo-bici.png" alt="Logo Innovamos por">
+                <p class="text-center">el viaje contin&uacute;a...</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <div class="inicio">
+      <div class="add-word">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <div class="row">
+                <div class="col-md-3">
+                  <p class="instructions">Describe en una palabra raz&oacute;n por la cual innov&aacute;s <span class="text-uppercase">#innovamos por</span></p>
+                </div>
+                <div class="col-md-4 col-md-offset-1">
+                  <input type="text" class="word-input form-control">
+                </div>
+                <div class="col-md-3">
+                  <button class="btn btn-primary pull-right word-submit" type="button">Agregar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="container">
       <div id="porque-cuestamoras" class="section-wrapper" ng-include="'views/porque-cuestamoras.html'" ng-controller="PorqueCuestamorasCtrl"></div>
@@ -107,14 +114,13 @@
     </div>
 
     <div class="container">
-      <div id="brainteasers" class="section-wrapper" ng-include="'views/brainteasers.html'" ng-controller="BrainteasersCtrl"></div>
-    </div>
-
-    <div class="container">
       <div id="produccion" class="section-wrapper" ng-include="'views/produccion.html'" ng-controller="ProduccionCtrl"></div>
     </div>
 
-    <div class="footer">
+    <div id="footer">
+      <div class="container">
+        <p class="col-md-4 col-md-offset-4 text-center"><img class="img-responsive" src="images/logo_footer.png" alt="Logo Cuestamoras"></p>
+      </div>
       <div class="container">
         <p class="text-uppercase text-center">Copyright 2014</p>
       </div>
@@ -137,6 +143,7 @@
     <!-- bower:js -->
     <script src="bower_components/scrollr/dist/skrollr.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
     <!-- <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>-->
     <!-- <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>-->
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
@@ -230,13 +237,6 @@
 
       setTimeout(function() {
         run();
-        $('.play-circle').clickToggle(
-          function(){
-            document.getElementById('audio-player').play();
-          }, function(){
-            document.getElementById('audio-player').pause();
-          }
-        );
 
         $('#videoModal, #videoModalProduction').on('hidden.bs.modal', function () {
           $(this).find('iframe').attr('src', '');

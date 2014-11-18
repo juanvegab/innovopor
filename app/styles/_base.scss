@@ -66,6 +66,10 @@ $header_link_color_hover: $common_color_red;
 	margin: 30px auto;
 }
 
+.img-responsive {
+	margin: 0 auto;
+}
+
 .video-wrapper {
 	margin-top: 30px;
 	li {
@@ -124,7 +128,7 @@ h4 {
 }
 
 h5 {
-	font-size: em(34px);
+	font-size: em(38px);
 	font-family: $headings_font;
 	color: $headings_color;
 }

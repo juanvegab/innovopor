@@ -1,6 +1,9 @@
 .section-wrapper {
-  padding-top: 30px;
+  padding-top: 65px;
   min-height: 500px;
+  h2 {
+  	margin-top: 40px;
+  }
 }
 
 .section-wrapper-white {
@@ -18,45 +21,69 @@
 
 //Navegacion Principal
 #main-nav-bar {
-	background: $header_background;
+	@include background(image-url('header-bg.jpg') top center);
+	@include background-size(cover);
+	border: none;
+	margin-bottom: 0;
 	nav {
+		max-height: none;
+
+			div {
+				float: right;
+			}
+		&[aria-expanded=true], &.collapsing {
+			li {
+				a {
+					padding: 5px 10px;
+				}
+			}
+			div {
+				float: none;
+			}
+		}
 		li {
 			a {
 				font-family: $header_nav_font;
 				font-weight: bold;
 				text-transform: uppercase;
 				color: $header_link_color;
-				padding: 15px 10px;
+				padding: 30px 10px;
 			}
-			&.active {
+			&.active, &:hover {
 				a {
 					color: $header_link_color_hover;
+					background: none;
 				}
 			}
 		}
 	}
 	.navbar-brand {
-		width: 80px;
+		width: 100px;
+		height: 100px;
 		padding: 0;
 	}
 }
 
 //Inicio
-#inicio {
+#inicio, .inicio {
 	.add-word {
-		position: absolute;
-		width: 100%;
-		bottom: 0;
+		// position: absolute;
+		// width: 100%;
+		// bottom: 0;
+		margin-top: 30px;
 		background: #1d1f1e;
 		padding-top: 20px;
 		padding-bottom: 20px;
 	}
 	.instructions {
 		color: $common_color_white;
-		font-size: em(16px);
+		font-size: em(22px);
+		font-weight: 100;
+		line-height: 1.2;
 		.text-uppercase {
 			font-family: $headings_font;
-			font-size: em(33px, 16px);
+			font-size: em(33px, 22px);
+			font-weight: bold;
 		}
 	}
 	.word-input {
@@ -67,14 +94,57 @@
 		font-family: $primary_font;
 		font-weight: bold;
 		color: $common_color_black;
+		margin-top: 10px;
 	}
 	.word-submit {
-		margin-top: 10px;
-		margin-bottom: 10px;
+		margin-top: 20px;
 	}
 	.videoLogo {
 		img {
 			margin: 0 auto;
+			max-height: 250px;
+		}
+		p {
+			font-family: $secondary_font;
+			font-size: em(60px);
+			color: $common_color_white;
+		}
+	}
+}
+
+//Porque Cuestamoras
+#porque-cuestamoras {
+	min-height: 0;
+	.porque-content {
+		margin-top: 30px;
+	}
+	.text-wrapper {
+		border-left: 2px solid $common_color_gray;
+		font-size: em(18px);
+		font-weight: 200;
+	}
+}
+
+//Como lo hacemos
+#como-lo-hacemos{
+	min-height: 0;
+	.reasons-list {
+		li {
+			font-size: em(18px);
+			margin-bottom: em(30px);
+			font-weight: 200;
+			display: flex;
+			vertical-align: middle;
+			margin-bottom: 0;
+			min-height: 75px;
+			line-height: 1;
+			span {
+				width: 40px;
+				min-width: 40px;
+				display: block;
+				float: left;
+				margin-right: 20px;
+			}
 		}
 	}
 }
@@ -154,26 +224,6 @@
 	}
 }
 
-//Porque Cuestamoras
-#porque-cuestamoras {
-	min-height: 0;
-}
-
-//Como lo hacemos
-#como-lo-hacemos{
-	min-height: 0;
-	.reasons-list {
-		li {
-			font-size: em(25px);
-			margin-bottom: em(30px);
-			vertical-align: top;
-			&:before {
-				@extend .circle;
-			}
-		}
-	}
-}
-
 //Innovo Por, Word Cloud
 #innovo-por {
 	margin-bottom: 30px;
@@ -196,6 +246,22 @@
 
 	.heading-wrapper {
 		margin-bottom: 50px;
+	}
+
+	#carousel-twitter {
+		&:after {
+			content: ' ';
+			display: block;
+			background: white;
+			width: 60px;
+			height: 60px;
+			position: absolute;
+			top: -30px;
+			left: 50%;
+			@include transform(rotate(45deg));
+			margin-left: -30px;
+			border: none;
+		}
 	}
 
 	.carousel{
@@ -222,16 +288,22 @@
 		h5 {
 			color: $common_color_white;
 			text-transform: uppercase;
-			font-weight: bold;
+			// font-weight: bold;
 		}
 		p {
 			color: $common_color_white;
 			font-weight: 100;
+			font-size: em(20px);
+			line-height: 1.3;
 		}
 
 		a {
 			color: $common_color_white;
-			font-weight: 100;	
+			font-weight: 100;
+			font-size: em(20px);
+			span {
+				color: $common_color_black;
+			}	
 		}
 	}
 }
@@ -245,7 +317,7 @@
 	.heading-wrapper {
 		margin-bottom: 50px;
 	}
-
+	
 	.carousel{
 		padding-top: 45px;
 		padding-bottom: 75px;
@@ -302,6 +374,28 @@
 			}
 		}
 	}
+	.pagination {
+		margin: 20px auto;
+		max-width: 193px;
+		border: none;
+		display: block;
+		font-family: $primary_font;
+		font-weight: bold;
+		a {
+			border: none;
+			color: $common_color_black;
+		}
+		.red-color {
+			color: $common_color_red_light;
+		}
+	}
+}
+
+//footer
+#footer {
+	font-family: $headings_font;
+	font-size: em(22px);
+	color: #8d969d;
 }
 
 .animClass {
