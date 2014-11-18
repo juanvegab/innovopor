@@ -3,8 +3,8 @@
 	<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
 </div>
 <div class="row">
-	<ul class="col-md-8 col-md-offset-2 video-wrapper">
-		<li class="col-md-4" ng-repeat="picture in pictures | limitTo:9">
+	<ul class="col-md-8 col-sm-12 col-md-offset-2 video-wrapper">
+		<li class="col-sm-4 col-xs-6" ng-repeat="picture in pictures | limitTo:9">
 			<a href="{{picture.source}}" data-toggle="lightbox" data-gallery="galleryModal" data-title="">
 				<img class="img-responsive" src="{{picture.source}}">
 			</a>

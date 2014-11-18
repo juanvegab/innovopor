@@ -1,4 +1,8 @@
-$base_font_size: 16px;
+$large_font_size: 16px;
+$base_font_size: 15px;
+$tablet_font_size: 14px;
+$mobile_font_size: 13px;
+
 @import "functions";
 @import "utils";
 @import "ekko-lightbox";
@@ -19,7 +23,7 @@ $common_color_green_light: #4ab848;
 $headings_color: $common_color_black;
 $headings_color_underline: $common_color_gray;
 $headings_font: $primary_font;
-$headings_size_px: 55px;
+$headings_size_px: 52px;
 $headings_size: em($headings_size_px);
 
 $headings_color_altern: $common_color_white;
@@ -98,8 +102,9 @@ $header_link_color_hover: $common_color_red;
 	}
 }
 
-html {
+body {
 	font-size: $base_font_size;
+	font-size: 100%;
 }
 
 h1 {
@@ -158,5 +163,41 @@ h5 {
 		border: 2px solid $common_color_white;
 		background: $common_color_green_light;
 		color: $common_color_white;
+	}
+}
+
+
+/* rules for mobile horizontal (480 > 768)  */
+@media (max-width: $screen-xs-min) {
+	body {
+		font-size: 12px;
+	}
+}
+
+/* rules for mobile horizontal (480 > 768)  */
+@media (min-width: $screen-xs-min) {
+	body {
+		font-size: $mobile_font_size;
+	}
+}
+
+/* rules for tablet (768 > 992) */
+@media (min-width: $screen-sm-min) {
+	body {
+		font-size: $tablet_font_size;
+	}
+}
+
+/* rules for desktop (992 > 1200) */
+@media (min-width: $screen-md-min) {
+	body {
+		font-size: $base_font_size;
+	}
+}
+
+/* rules for large (> 1200) */
+@media (min-width: $screen-lg-min) {
+	body {
+		font-size: $large_font_size;
 	}
 }
